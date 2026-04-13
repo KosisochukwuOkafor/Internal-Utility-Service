@@ -6,6 +6,7 @@ import json
 
 app = Flask(__name__)
 
+
 def get_secret():
     """Read secrets from AWS Secrets Manager at runtime"""
     client = boto3.client('secretsmanager', region_name='us-east-1')
@@ -15,8 +16,9 @@ def get_secret():
     except Exception:
         return {}
 
-# At app startup, load secrets
+
 secrets = get_secret()
+
 
 @app.route("/")
 def home():
@@ -26,13 +28,16 @@ def home():
         "db_host": config.DB_HOST
     })
 
+
 @app.route("/health")
 def health():
     return jsonify({"status": "UP"}), 200
 
+
 @app.route("/users")
 def users():
     return jsonify(get_users())
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
