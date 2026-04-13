@@ -1,0 +1,26 @@
+# Git history — not needed in the image
+.git
+.gitignore
+# Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+# Test files — not needed at runtime
+test_app.py
+# Environment and secrets — NEVER include these
+.env
+*.env
+# Documentation — not needed in image
+README.md
+GETTING_STARTED.md
+CONTRIBUTING.md
+# GitHub Actions config
+.github
+# Nginx config (runs separately)
+nginx/
+# Local virtual environments
+venv/
+env/
+.venv
