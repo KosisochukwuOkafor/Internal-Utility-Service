@@ -2,3 +2,4 @@ Flask==2.2.5
 boto3
 pytest
 flake8
+werkzeug==2.2.3
