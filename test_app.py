@@ -51,4 +51,3 @@ def test_home_returns_db_host(client):
 def test_health_status_value(client):
     res = client.get('/health')
     assert res.get_json()['status'] == 'UP'
-    
